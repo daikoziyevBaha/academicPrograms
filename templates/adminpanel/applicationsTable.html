@@ -1,0 +1,143 @@
+{% extends 'base_admin.html' %}
+{% load static %}
+{% load adminfilter %}
+{% load i18n %}
+
+{% block content %}
+{% trans 'Посмотреть' as view %}
+{% trans 'Дата' as date %}
+{% trans 'Студент' as student %}
+{% trans 'Тип мобильности' as type %}
+{% trans 'Академический год' as academic_year %}
+{% trans 'Страна' as country %}
+{% trans 'Университет' as university %}
+{% trans 'Желаемая программа' as desired_specialty %}
+{% trans 'Паспорт' as passport %}
+{% trans 'Транскрипт' as transcript %}
+{% trans 'Мотивационное письмо' as motivation %}
+{% trans 'Английский' as english %}
+{% trans 'Рекоммендационное письмо' as recommendation %}
+{% trans 'Статус' as status %}
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+        {% include 'partials/messages.html' %}
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">{% trans 'Отправленные заявки на программу Академическая мобильность' %}</h1>
+        <p class="mb-4">{% trans "Таблица отображает заявки со всеми полями, Видимость полей - позволяет выбрать колонки которые вас интересуют. Экспорт данных реализуется при нажатии на кнопки панели (COPY/PRINT/EXCEL/PDF), Каждое поле имеет фильтрацию в виде поиска" %}.
+
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">{% trans 'Академическая мобильность' %}</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped" id="applicationsTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr></tr>
+                            <tr>
+                                <th>{{view}}</th>
+                                <th style="width: min-content;">#</th>
+                                <th>{{date}}</th>
+                                <th>{{student}}</th>
+                                <th>{{type}}</th>
+                                <th>{{academic_year}}</th>
+                                <th>{{country}}</th>
+                                <th>{{university}}</th>
+                                <th>{{desired_specialty}}</th>
+                                <th>{{passport}}</th>
+                                <th>{{transcript}}</th>
+                                <th>{{motivation}}</th>
+                                <th>{{english}}</th>
+                                <th>{{recommendation}}</th>
+                                <th>{{status}}</th>
+                            </tr>
+                            <tr class="filters">
+                                <th></th>
+                                <th><input type="select" placeholder="#"></th>
+                                <th></th>
+                                <th><input type="select" placeholder="{{student}}"></th>
+                                <th><input type="select" placeholder="{{type}}"></th>
+                                <th><input type="select" placeholder="{{academic_year}}"></th>
+                                <th><input type="select" placeholder="{{country}}"></th>
+                                <th><input type="select" placeholder="{{university}}"></th>
+                                <th><input type="select" placeholder="{{desired_specialty}}"></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th><input type="select" placeholder="{{status}}"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for app in applications %}
+                            <tr>
+                                <td><a href="{% url 'open-app' app.id %}"><button class="btn btn-primary"><i class="fa-solid fa-gears fa-2xl"></i></button></td></a>
+                                <td>{{app.id}}</td>
+                                <td>{{app.created_at|date:"d-M-Y H-s"}}</td>
+                                <td>{{app.user.get_full_name}}</td>
+                                <td>{{app.type}}</td>
+                                <td>{{app.academic_year}}</td>
+                                <td>{{app.country}}</td>
+                                <td>{{app.university}}</td>
+                                <td>{{app.desired_specialty}}</td>
+                                {% if app.passport %}
+                                <td>{{app.passport|get_file_name}}</td>
+                                {% else %}
+                                <td>---</td>
+                                {% endif %}
+                                {% if app.transcript %}
+                                <td>{{app.transcript|get_file_name}}</td>
+                                {% else %}
+                                <td>---</td>
+                                {% endif %}
+                                {% if app.motivation %}
+                                <td>{{app.motivation|get_file_name}}</td>
+                                {% else %}
+                                <td>---</td>
+                                {% endif %}
+                                {% if app.english %}
+                                    <td>{{app.english|get_file_name}}</td>
+                                {% else %}
+                                    <td>---</td>
+                                {% endif %}
+                                {% if app.recommendation %}
+                                    <td>{{app.recommendation|get_file_name}}</td>
+                                {% else %}
+                                    <td>---</td>
+                                {% endif %}
+                                <td>{{app.status}}</td>
+                                <!— Modal —>
+                        
+                            </tr>
+                            
+                            {% endfor %}
+                            </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>{{view}}</th>
+                                <th>#</th>
+                                <th>{{date}}</th>
+                                <th>{{student}}</th>
+                                <th>{{type}}</th>
+                                <th>{{academic_year}}</th>
+                                <th>{{country}}</th>
+                                <th>{{university}}</th>
+                                <th>{{desired_specialty}}</th>
+                                <th>{{passport}}</th>
+                                <th>{{transcript}}</th>
+                                <th>{{motivation}}</th>
+                                <th>{{english}}</th>
+                                <th>{{recommendation}}</th>
+                                <th>{{status}}</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+ 
+{% endblock content %}

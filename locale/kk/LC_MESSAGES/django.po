@@ -1,0 +1,476 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-08 20:34+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: .\application\models.py:12 .\templates\adminpanel\applicationsTable.html:12
+#: .\templates\adminpanel\profile.html:129
+#: .\templates\adminpanel\profile.html:216
+#: .\templates\adminpanel\profilesTable.html:13
+msgid "Страна"
+msgstr ""
+
+#: .\application\models.py:20 .\templates\adminpanel\applicationsTable.html:13
+#: .\templates\adminpanel\profile.html:115
+#: .\templates\adminpanel\profile.html:219
+#: .\templates\adminpanel\profilesTable.html:14
+msgid "Университет"
+msgstr ""
+
+#: .\application\models.py:27
+msgid "Данные"
+msgstr ""
+
+#: .\application\models.py:54 .\templates\adminpanel\applicationsTable.html:10
+#: .\templates\adminpanel\profile.html:210
+msgid "Тип мобильности"
+msgstr ""
+
+#: .\application\models.py:55 .\templates\adminpanel\applicationsTable.html:11
+msgid "Академический год"
+msgstr ""
+
+#: .\application\models.py:58 .\templates\adminpanel\profile.html:222
+#: .\templates\application\exchange_info.html:30
+msgid "Желаемая специальность"
+msgstr ""
+
+#: .\application\models.py:59
+msgid "Скан паспорта"
+msgstr ""
+
+#: .\application\models.py:60
+msgid "Скан транскрипта"
+msgstr ""
+
+#: .\application\models.py:61
+msgid "Скан мотивационного письма"
+msgstr ""
+
+#: .\application\models.py:62
+msgid "Скан английского"
+msgstr ""
+
+#: .\application\models.py:63
+msgid "Скан рекоммендации"
+msgstr ""
+
+#: .\application\models.py:64
+msgid "Статус заявки"
+msgstr ""
+
+#: .\authentication\models.py:19 .\templates\adminpanel\profile.html:33
+msgid "Имя"
+msgstr ""
+
+#: .\authentication\models.py:20 .\templates\adminpanel\profile.html:47
+msgid "Фамилия"
+msgstr ""
+
+#: .\authentication\models.py:21
+msgid "Отчество"
+msgstr ""
+
+#: .\authentication\models.py:22 .\templates\adminpanel\profilesTable.html:9
+msgid "Почта"
+msgstr ""
+
+#: .\authentication\models.py:24 .\templates\adminpanel\profile.html:86
+msgid "Номер телефона"
+msgstr ""
+
+#: .\authentication\models.py:25 .\templates\adminpanel\profile.html:60
+#: .\templates\adminpanel\profilesTable.html:11
+msgid "Дата рождения"
+msgstr ""
+
+#: .\authentication\models.py:26 .\templates\adminpanel\profilesTable.html:12
+msgid "Пол"
+msgstr ""
+
+#: .\authentication\models.py:29 .\templates\adminpanel\profile.html:143
+#: .\templates\adminpanel\profilesTable.html:17
+msgid "Начало обучения"
+msgstr ""
+
+#: .\authentication\models.py:30
+msgid "Выпуск"
+msgstr ""
+
+#: .\authentication\models.py:31 .\templates\adminpanel\profile.html:187
+#: .\templates\adminpanel\profilesTable.html:15
+msgid "Степень"
+msgstr ""
+
+#: .\authentication\models.py:32 .\templates\adminpanel\profile.html:173
+#: .\templates\adminpanel\profilesTable.html:16
+msgid "Специальность"
+msgstr ""
+
+#: .\authentication\models.py:33
+msgid "Номер паспорта"
+msgstr ""
+
+#: .\authentication\models.py:36 .\templates\adminpanel\profilesTable.html:20
+msgid "Кем выдан"
+msgstr ""
+
+#: .\authentication\models.py:37 .\templates\adminpanel\profilesTable.html:21
+msgid "Дата выдачи"
+msgstr ""
+
+#: .\authentication\models.py:38 .\templates\adminpanel\profilesTable.html:22
+msgid "Дата просрочки"
+msgstr ""
+
+#: .\authentication\models.py:39 .\templates\adminpanel\profilesTable.html:23
+msgid "Контактное лицо"
+msgstr ""
+
+#: .\authentication\models.py:40 .\templates\adminpanel\profilesTable.html:24
+msgid "Номер контактного лица"
+msgstr ""
+
+#: .\authentication\models.py:41 .\templates\adminpanel\profilesTable.html:25
+msgid "Почта контактного лица"
+msgstr ""
+
+#: .\iituidep\settings.py:129
+msgid "Russian"
+msgstr ""
+
+#: .\iituidep\settings.py:130
+msgid "English"
+msgstr ""
+
+#: .\iituidep\settings.py:131
+msgid "Kazakh"
+msgstr ""
+
+#: .\templates\adminpanel\applicationsTable.html:7
+msgid "Посмотреть"
+msgstr ""
+
+#: .\templates\adminpanel\applicationsTable.html:8
+msgid "Дата"
+msgstr ""
+
+#: .\templates\adminpanel\applicationsTable.html:9
+msgid "Студент"
+msgstr ""
+
+#: .\templates\adminpanel\applicationsTable.html:14
+msgid "Желаемая программа"
+msgstr ""
+
+#: .\templates\adminpanel\applicationsTable.html:15
+#: .\templates\adminpanel\profilesTable.html:19
+msgid "Паспорт"
+msgstr ""
+
+#: .\templates\adminpanel\applicationsTable.html:16
+msgid "Транскрипт"
+msgstr ""
+
+#: .\templates\adminpanel\applicationsTable.html:17
+msgid "Мотивационное письмо"
+msgstr ""
+
+#: .\templates\adminpanel\applicationsTable.html:18
+msgid "Английский"
+msgstr ""
+
+#: .\templates\adminpanel\applicationsTable.html:19
+msgid "Рекоммендационное письмо"
+msgstr ""
+
+#: .\templates\adminpanel\applicationsTable.html:20
+#: .\templates\adminpanel\profile.html:225
+msgid "Статус"
+msgstr ""
+
+#: .\templates\adminpanel\applicationsTable.html:25
+msgid "Отправленные заявки на программу Академическая мобильность"
+msgstr ""
+
+#: .\templates\adminpanel\applicationsTable.html:26
+msgid ""
+"Таблица отображает заявки со всеми полями, Видимость полей - позволяет "
+"выбрать колонки которые вас интересуют. Экспорт данных реализуется при "
+"нажатии на кнопки панели (COPY/PRINT/EXCEL/PDF), Каждое поле имеет "
+"фильтрацию в виде поиска"
+msgstr ""
+
+#: .\templates\adminpanel\applicationsTable.html:31
+#: .\templates\partials\adminpanel\navbar.html:28
+#: .\templates\partials\application\navbar.html:29
+#: .\templates\partials\intdepartment\navbar.html:17
+msgid "Академическая мобильность"
+msgstr ""
+
+#: .\templates\adminpanel\profile.html:10
+msgid "Профиль студента"
+msgstr ""
+
+#: .\templates\adminpanel\profile.html:17
+#: .\templates\application\profile.html:9
+#: .\templates\partials\application\sidebar.html:36
+msgid "Личная информация"
+msgstr ""
+
+#: .\templates\adminpanel\profile.html:73
+msgid "E-mail адрес"
+msgstr ""
+
+#: .\templates\adminpanel\profile.html:99
+#: .\templates\partials\application\sidebar.html:44
+msgid "Образование"
+msgstr ""
+
+#: .\templates\adminpanel\profile.html:157
+msgid "Год окончания"
+msgstr ""
+
+#: .\templates\adminpanel\profile.html:200
+msgid "Заявки студента"
+msgstr ""
+
+#: .\templates\adminpanel\profile.html:204
+#: .\templates\application\application.html:32
+#: .\templates\application\application_details.html:10
+msgid "Заявка"
+msgstr ""
+
+#: .\templates\adminpanel\profile.html:213
+msgid "Период"
+msgstr ""
+
+#: .\templates\adminpanel\profilesTable.html:8
+msgid "Имя студента"
+msgstr ""
+
+#: .\templates\adminpanel\profilesTable.html:10
+msgid "Телефон"
+msgstr ""
+
+#: .\templates\adminpanel\profilesTable.html:18
+msgid "Дата выпуска"
+msgstr ""
+
+#: .\templates\adminpanel\profilesTable.html:30
+#: .\templates\adminpanel\profilesTable.html:36
+msgid "Профили пользователей"
+msgstr ""
+
+#: .\templates\adminpanel\profilesTable.html:31
+msgid ""
+"Таблица отображает Профили студентов со всеми полями, Видимость полей - "
+"позволяет выбрать колонки которые вас интересуют Экспорт данных реализуется "
+"при нажатии на кнопки панели (COPY/PRINT/EXCEL/PDF), Каждое поле имеет "
+"фильтрацию в виде поиска"
+msgstr ""
+
+#: .\templates\application\application.html:10
+msgid "Заявки на Академическую мобильность"
+msgstr ""
+
+#: .\templates\application\application.html:19
+msgid "У вас нет активных Заявок"
+msgstr ""
+
+#: .\templates\application\application.html:38
+msgid "Тип мобильности:"
+msgstr ""
+
+#: .\templates\application\application.html:41
+msgid "Академический год:"
+msgstr ""
+
+#: .\templates\application\application.html:44
+msgid "Страна:"
+msgstr ""
+
+#: .\templates\application\application.html:47
+msgid "Университет:"
+msgstr ""
+
+#: .\templates\application\application.html:50
+msgid "Желаемая специальность:"
+msgstr ""
+
+#: .\templates\application\application.html:58
+msgid "редактировать"
+msgstr ""
+
+#: .\templates\application\application.html:59
+msgid "удалить"
+msgstr ""
+
+#: .\templates\application\application_details.html:18
+#: .\templates\application\documents_edit.html:7
+msgid "Документы"
+msgstr ""
+
+#: .\templates\application\application_details.html:22
+#: .\templates\application\application_details.html:68
+msgid "Статус:"
+msgstr ""
+
+#: .\templates\application\application_details.html:24
+#: .\templates\application\application_details.html:70
+msgid "Заполнен"
+msgstr ""
+
+#: .\templates\application\application_details.html:26
+#: .\templates\application\application_details.html:72
+msgid "Не Заполнен"
+msgstr ""
+
+#: .\templates\application\application_details.html:56
+#: .\templates\application\application_details.html:104
+msgid "заполнить"
+msgstr ""
+
+#: .\templates\application\application_details.html:64
+#: .\templates\application\exchange_info.html:6
+msgid "Информация о программе"
+msgstr ""
+
+#: .\templates\application\application_details.html:114
+msgid "Пользовательское соглашение"
+msgstr ""
+
+#: .\templates\application\application_details.html:119
+msgid "Отправить"
+msgstr ""
+
+#: .\templates\application\application_details.html:129
+msgid "Не все поля заполнены"
+msgstr ""
+
+#: .\templates\application\application_details.html:138
+msgid "Не все поля заполнены в разделе -"
+msgstr ""
+
+#: .\templates\application\application_details.html:145
+msgid "Закрыть"
+msgstr ""
+
+#: .\templates\application\createapplication.html:6
+msgid "Новая заявка"
+msgstr ""
+
+#: .\templates\application\createapplication.html:36
+#: .\templates\application\curriculum.html:54
+#: .\templates\application\documents_edit.html:35
+#: .\templates\application\exchange_info.html:35
+#: .\templates\application\profile.html:116
+msgid "Отменить"
+msgstr ""
+
+#: .\templates\application\createapplication.html:37
+#: .\templates\application\curriculum.html:55
+#: .\templates\application\documents_edit.html:36
+#: .\templates\application\exchange_info.html:36
+#: .\templates\application\profile.html:117
+msgid "Сохранить изменения"
+msgstr ""
+
+#: .\templates\application\curriculum.html:10
+msgid "Текущее образование"
+msgstr ""
+
+#: .\templates\application\documents_edit.html:18
+#: .\templates\application\documents_edit.html:26
+msgid ""
+"Загрузите скан дкумента| Размер не должен превышать 5МБ| Расширение: PDF/PNG/"
+"JPG"
+msgstr ""
+
+#: .\templates\application\documents_edit.html:19
+msgid "Отправлен"
+msgstr ""
+
+#: .\templates\partials\adminpanel\navbar.html:25
+#: .\templates\partials\application\navbar.html:26
+#: .\templates\partials\intdepartment\navbar.html:14
+msgid "Международный департамент"
+msgstr ""
+
+#: .\templates\partials\adminpanel\navbar.html:50
+#: .\templates\partials\application\navbar.html:53
+#: .\templates\partials\application\sidebar.html:29
+msgid "Профиль"
+msgstr ""
+
+#: .\templates\partials\adminpanel\navbar.html:54
+#: .\templates\partials\application\navbar.html:57
+msgid "Изменить пароль"
+msgstr ""
+
+#: .\templates\partials\adminpanel\navbar.html:58
+#: .\templates\partials\application\navbar.html:61
+#: .\templates\partials\application\sidebar.html:21
+#: .\templates\partials\application\sidebar.html:53
+msgid "Заявки"
+msgstr ""
+
+#: .\templates\partials\adminpanel\navbar.html:63
+#: .\templates\partials\application\navbar.html:66
+msgid "Выйти"
+msgstr ""
+
+#: .\templates\partials\adminpanel\sidebar.html:21
+msgid "Панель администратора"
+msgstr ""
+
+#: .\templates\partials\adminpanel\sidebar.html:29
+msgid "Таблицы"
+msgstr ""
+
+#: .\templates\partials\adminpanel\sidebar.html:36
+msgid "Отправленные заявки"
+msgstr ""
+
+#: .\templates\partials\adminpanel\sidebar.html:45
+msgid "Профиля студентов"
+msgstr ""
+
+#: .\templates\partials\adminpanel\sidebar.html:62
+msgid "Главная страница"
+msgstr ""
+
+#: .\templates\partials\adminpanel\sidebar.html:71
+msgid "Международный отдел"
+msgstr ""
+
+#: .\templates\partials\application\sidebar.html:11
+msgid "МУИТ"
+msgstr ""
+
+#: .\templates\partials\application\sidebar.html:61
+msgid "Активные заявки"
+msgstr ""
+
+#: .\templates\partials\intdepartment\navbar.html:20
+msgid "Входящая мобильность"
+msgstr ""
+
+#: .\templates\partials\intdepartment\navbar.html:23
+msgid "Исходящая мобильность"
+msgstr ""

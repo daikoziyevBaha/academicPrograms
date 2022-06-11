@@ -1,0 +1,155 @@
+{% extends 'base_main.html' %}
+{% load static %}
+
+
+{% block content %}
+<!-- Topbar -->
+<!-- Begin Page Content -->
+<div class="container-fluid" style="font-size: 30%;">
+    <div class="title" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+        <h1>Incoming Exchange</h1>
+    </div>
+    <div class="container m-auto px-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">            
+        <div class="py-3 px-4 w-75 p-3" >
+            <img style="width: 100%" alt="aboutIITU.png"  src="https://iitu.edu.kz/media/images/Prezentatsiia_po_deiatelnosti_DMSiAM_s_izmeneni.original.jpg" width="1139">
+        </div>            
+    </div>
+    
+    <div class="row  justify-content-center pt-6">
+        <a href="{% url 'application' %}" class="row justify-content-center" style="text-decoration:none;"><button class="btn btn-lg btn-dark" style="width: 350px;" >Подать заявку онлайн</button></a>
+    </div>
+    <div class="container pt-6 m-auto px-4 w-75" style="color: rgb(112, 105, 105);">
+        <p class="fs-4">IITU is the only University in Kazakhstan which received ASIIN institutional international accreditation in 2019 and has underwent official confirmation of compliance with international standards. “The International Information Technology University guarantees the fulfillment of institutional, procedural and cultural requirements for high quality teaching and successful learning,” confirms experts at ASIIN (Agency for the Accreditation of Educational Programs in Engineering, Computer Science, Natural Sciences, and Mathematics, Germany).</p>
+
+        <hr>
+
+        <div class="text-center pt-6 pb-4"><h3>Who can apply?</h3></div>
+        <p class="fs-4 m-0">An Inbound Exchange student is someone from one of our partner institutions who meets the exchange eligibility requirements.                        </p>
+        <p class="fs-4 m-0">(These requirements may vary for each institution. Check detailed eligibility requirements for your institution with your international student exchange advisors). Depending on the institutional agreement, eligible students may study for one or two semesters at IITU.</p>
+        <p class="fs-4">If you wish to study at IITU as an exchange student, you should first contact the Exchange Coordinator at your home university for the details of the selection process such as eligibility, required documents and deadlines.</p>
+        <p class="fs-4">IITU will only process applications with official nominations from our partner universities.</p>
+                                
+        <hr>
+
+        <div class="text-center pt-6 pb-4"><h3>Entry Requirements</h3><h5>qweqweqwewqeqeqweqweqweqwe qweqwe qweqw</h5></div>
+        <p class="fs-4">In order to apply for the Inbound Exchange Program you must satisfy the following criteria :</p>
+        <ul>
+            <li class="fs-5">Minimum 1 year of full-time study at a partner university</li>
+            <li class="fs-5">Have the academic background related to the course applying for</li>
+            <li class="fs-5">GPA (Grade Point Average) of 3.0 or better or equivalent</li>
+            <li class="fs-5">English language ability: minimum IELTS 5.5, TOEFL ITP 460, TOEFL IBT 87, TOEFL 560, Certificate from home university about English level (minimum B2)</li>
+        </ul>
+
+        <hr>
+
+        <div class="text-center pt-6 pb-4"><h3>Предметы</h3></div>                        
+        <a class="text-drop" data-mdb-toggle="collapse" aria-expanded="false" aria-controls="collapseAaG" href="#collapseAaG" role="button">
+            <h4>Algebra and Geometry</h4>
+        </a>
+        <div class="collapse" id="collapseAaG">
+            <p class="fs-4">This course includes the study of matrix algebra, determinants, systems of linear equations, vector algebra, analytic geometry on plane and on space, lines and planes, second order curves.</p>
+            <ul>
+                <li class="fs-5"><span class="fw-bold">Department: </span> Mathematical Computer Modeling</li>
+                <li class="fs-5"><span class="fw-bold">Syllabus: </span> <a href="https://iitu.edu.kz/documents/918/8_AG_CS_Nessipbayev_YK_2020-2021.pdf">Syllabus Algebra and Geometry</a></li>
+            </ul>
+        </div>
+
+        <a class="text-drop" data-mdb-toggle="collapse" aria-expanded="false" aria-controls="collapseMA1" href="#collapseMA1" role="button">
+            <h4>Mathematical Analysis 1</h4>
+        </a>
+        <div class="collapse" id="collapseMA1">
+            <p class="fs-4">Mathematical Analysis 1 is the first course in a two-semester sequence. The primary aim of the sequence is to help students learn, 
+                understand, explain, and use calculus. In addition, it is desired that students will improve their mathematical skills, further their 
+                understanding of mathematics and its applications to the sciences. This first course concentrates on single variable functions, their limits, 
+                continuity, differential and integral calculus.</p>
+            <ul>
+                <li class="fs-5"><span class="fw-bold">Department: </span> Mathematical Computer Modeling</li>
+                <li class="fs-5"><span class="fw-bold">Syllabus: </span> <a href="https://iitu.edu.kz/documents/919/Syllabus_Math_Analysis_1.pdf">Syllabus Mathematical Analysis 1</a></li>
+            </ul>
+        </div>
+        
+        <a class="text-drop" data-mdb-toggle="collapse" aria-expanded="false" aria-controls="collapseADS" href="#collapseADS" role="button">
+            <h4>Algorithms and Data Structures</h4>
+        </a>
+        <div class="collapse" id="collapseADS">
+            <p class="fs-4">The course is designed for studying of development of algorithms and programs for solutions of different problems. 
+                For this purpose, subjects of this course are considered, such as program structure, principles of construction of algorithms and 
+                program, methods of solving, algorithmization, programming, debugging and implementation of programs, using the language C++.</p>
+            <ul>
+                <li class="fs-5"><span class="fw-bold">Department: </span> Mathematical Computer Modeling</li>
+                <li class="fs-5"><span class="fw-bold">Syllabus: </span> <a href="https://iitu.edu.kz/documents/937/Syllabus_Performance_Data_Structures_Algorithms_MCM_.pdf">Syllabus Algorithms and Data Structures</a></li>
+            </ul>
+        </div>
+
+        <a class="text-drop" data-mdb-toggle="collapse" aria-expanded="false" aria-controls="collapseOS" href="#collapseOS" role="button">
+            <h4>Operating Systems</h4>
+        </a>
+        <div class="collapse" id="collapseOS">
+            <p class="fs-4">This course introduces the student to the principles underlying the design and implementation of contemporary 
+                computer operating systems.  This course is designed for students majoring in Computer Science or in areas having a strong 
+                emphasis in Computer Science.</p>
+            <ul>
+                <li class="fs-5"><span class="fw-bold">Department: </span> Mathematical Computer Modeling</li>
+                <li class="fs-5"><span class="fw-bold">Syllabus: </span> <a href="https://iitu.edu.kz/documents/920/Syllabus_Operating_systems.pdf">Syllabus Operating Systems</a></li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <div class="text-center pt-6 pb-4"><h3>Как мне подать заявку?</h3></div>                        
+        <p class="text-center" style="font-size: 1.1rem;">Выполните следующие действия, чтобы заполнить заявку на обмен/обучение за рубежом. Нажмите <a href="#">здесь</a> для получения подробной информации.</p>
+        
+        <a class="text-drop" data-mdb-toggle="collapse" aria-expanded="false" aria-controls="collapseEmail" href="#collapseEmail" role="button">
+            <h4>Nomination by Email</h4>
+        </a>
+        <div class="collapse" id="collapseEmail">
+            <ul>
+                <li class="fs-5">Nomination should be sent to int@edu.iitu.kz by home university coordinator.</li>
+                <li class="fs-5">Home university coordinator should include the following information in the nominations: <span class="fw-bold">Full name, Major, Program, Year of study, GPA & English test result.</span></li>
+            </ul>
+        </div>
+
+        <a class="text-drop" data-mdb-toggle="collapse" aria-expanded="false" aria-controls="collapseDline" href="#collapseDline" role="button">
+            <h4>Nomination Deadline</h4>
+        </a>
+        <div class="collapse" id="collapseDline">
+            <ul>
+                <li class="fs-5">Spring Semester: December 15</li>
+                <li class="fs-5">Fall Semester: May 15</span></li>
+            </ul>
+        </div>  
+
+        <a class="text-drop" data-mdb-toggle="collapse" aria-expanded="false" aria-controls="collapseApPeriod" href="#collapseApPeriod" role="button">
+            <h4>Application Period</h4>
+        </a>
+        <div class="collapse" id="collapseApPeriod">
+            <ul>
+                <li class="fs-5">Spring Semester: September 1st - October 15th</li>
+                <li class="fs-5">Fall Semester: March 1st - April 15th</span></li>
+            </ul>
+        </div>   
+        
+        <a class="text-drop" data-mdb-toggle="collapse" aria-expanded="false" aria-controls="collapseDocs" href="#collapseDocs" role="button">
+            <h4>Required documents</h4>
+        </a>
+        <div class="collapse" id="collapseDocs">
+            <ul>
+                <li class="fs-5">Application form</li>
+                <li class="fs-5">Study Plan (the courses has to be chosen from the list of table below)</span></li>
+                <li class="fs-5">A copy of Passport</li>
+                <li class="fs-5">Transcript</li>
+            </ul>
+        </div>                         
+        
+        <hr>
+        <!-- Button trigger modal -->
+        <div class="row mb-6 justify-content-center pt-6">
+            <a href="{% url 'application' %}" class="row justify-content-center" style="text-decoration:none;"><button class="btn btn-lg btn-dark" style="width: 350px;" >Подать заявку онлайн</button></a>
+        </div>
+    </div>  
+</div>
+</div>
+</div>
+</div>
+
+{% endblock %}

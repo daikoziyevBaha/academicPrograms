@@ -1,0 +1,27 @@
+#место для твоего кода
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("StudentsPerformance .csv")
+
+#Вывод 5 строк
+print(df.head(5))
+
+#Краткую информацию
+print(df.info())
+
+#Статистические данные
+print(df.describe())
+
+#Ответ на гипотезу
+#Посещение курсов повышает результат экзаменов у учеников у кого
+#мама и папа получили высшее образование
+print(df["parental level of education"].value_counts())
+#Количество учеников у которых 
+bachelor = df[df["parental level of education"] == "bachelor's degree"]["math score"].mean()
+only_school = df[df["parental level of education"] == "high school"]["math score"].mean()
+print("Оценки тех учеников чьи родители полчили высшее образование:",bachelor)
+print("Оценки тех учеников чьи родители закончили только школу:",only_school)
+
+df['parental level of education'].value_counts().plot(kind = 'pie')
+plt.show()

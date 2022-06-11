@@ -1,0 +1,15 @@
+{% load i18n %}
+{% autoescape off %}
+
+<div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <div>
+        <h3>Здравствуйте, {{user.email}}</h3>
+        <h3>Вас приветствует отдел Международного сотрудничества</h3>
+    </div>
+    <div>
+        <p>Мы рады вам сообщить, что вы прошли отбор на Акадмечискую мобильность</p>
+        <h5>Свяжитесь с нами university@gmail.com</h5>
+    </div>
+</div>
+
+{% endautoescape %}

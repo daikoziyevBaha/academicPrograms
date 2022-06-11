@@ -1,0 +1,22 @@
+#Bot Jiliya
+
+print('''Привет, меня зовут Джулия =)
+И я бот-помошник.''')
+answer = input('''Чем я могу тебе помочь?/рекомендация музыки/анекдот/стоп - завершить)''')
+answer = answer.lower()
+while answer != 'стоп':
+    if answer == 'рекомендация музыки':
+        wish = input("Какой жанр тебе нравится(жанры)")
+        if wish == 'rap':
+            print("Eminem - ...")
+        elif wish == 'pop':
+            print('k-pop')
+        else:
+            print('mickle jackson')
+    elif answer == 'анекдот':
+        print('анекдот')
+    else:
+        print('Сорри, я тебя не понял!')
+    answer = input('''Чем я могу тебе помочь?/рекомендация музыки/анекдот/стоп - завершить)''')
+
+    

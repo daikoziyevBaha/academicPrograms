@@ -1,0 +1,87 @@
+{% load i18n %}
+
+<!-- Sidebar -->
+<ul class="navbar-nav bg-danger sidebar sidebar-dark accordion" id="accordionSidebar">
+    
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">IITU</div>
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item active">
+        <a class="nav-link" href="/admin">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>{% trans 'Панель администратора' %}</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        {% trans 'Таблицы' %}
+    </div>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'applications_table' %}">                        
+            <i class="fas fa-fw fa-cog"></i>
+            <span>{% trans 'Отправленные заявки' %}</span>
+            
+        </a>
+    </li>
+
+    <!-- Nav Item - Utilities Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'profiles_table'%}">
+            <i class="fas fa-fw fa-wrench"></i>
+            <span>{% trans 'Профиля студентов' %}</span>
+            
+        </a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        IITU
+    </div>
+
+   <!-- Nav Item - Pages Collapse Menu -->
+   <li class="nav-item">
+    <a class="nav-link" href="#">                        
+        <i class="fas fa-fw fa-cog"></i>
+        <span>{% trans 'Главная страница' %}</span>
+        
+    </a>
+    </li>
+
+    <!-- Nav Item - Utilities Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-wrench"></i>
+            <span>{% trans 'Международный отдел' %}</span>
+        </a>
+    </li>   
+    
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+
+    <!-- Sidebar Message -->
+    
+
+</ul>
+<!-- End of Sidebar -->

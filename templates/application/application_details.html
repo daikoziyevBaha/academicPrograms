@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load applications %}
+{% load i18n %}
+
+{% block content %}
+<!-- Begin Page Content -->
+<div class="container-fluid " style="overflow: auto;">
+  <div class="container px-4">
+      <div class="text-3x1 pt-6 text-center">{% trans 'Заявка' %} - {{application.id}}</div>
+  </div>
+  <div class="container pt-6">
+      <div class="row">
+          <div class="col">
+              <div class="card shadow mb-4 px-0">
+                  <div class="row">
+                      <div class="col pr-0">
+                          <h5 class="card-header">{% trans 'Документы' %}</h5>
+                      </div>
+                      <div class="col pl-0">
+                          <p class="card-header text-gray-500 text-end">
+                            {% trans 'Статус:' %} 
+                            {% if status.documents == True%}
+                              <span style="color: green;">{% trans 'Заполнен' %}</span>
+                            {% else %}
+                              <span style="color: red;">{% trans 'Не Заполнен' %}</span>
+                            {% endif %}
+                            </p>
+                      </div>
+                  </div>                                        
+                  <div class="card-body">
+                      <div class="row">
+                          <div class="container pb-2">
+                              <div class="row g-2">
+                                  <div class="col-6 border-bottom">
+                                      <p class="fs-5">Скан паспорта</p>
+                                  </div>
+                                  <div class="col-6 border-bottom">
+                                      <p class="fs-5">Скан транскрипта</p>
+                                  </div>
+                                  <div class="col-6 border-bottom">
+                                      <p class="fs-5">Скан сертификата уровня английского языка</p>
+                                  </div>
+                                  <div class="col-6 border-bottom">
+                                      <p class="fs-5">Скан мотивационного письма</p>
+                                  </div>
+                                  <div class="col-6">
+                                      <p class="fs-5">Скан рекомендации</p>
+                                  </div>
+                                  <div class="col-6">
+                                      <p class="fs-5">Скан о вакцинации</p>
+                                  </div>
+                              </div>
+                          </div>                                                        
+                      </div>
+                      <a href="{% url 'documents-edit' application.pk %}" class="btn btn-primary">{% trans 'заполнить' %}</a>
+                  </div>                                    
+              </div>   
+          </div> 
+          <div class="col">
+              <div class="card shadow mb-4 px-0">
+                  <div class="row">
+                      <div class="col pr-0">
+                          <h5 class="card-header">{% trans 'Информация о программе' %}</h5>
+                      </div>
+                      <div class="col pl-0">
+                        <p class="card-header text-gray-500 text-end">
+                          {% trans 'Статус:' %} 
+                          {% if status.exchangeinfo == True %}
+                            <span style="color: green;">{% trans 'Заполнен' %}</span>
+                          {% else %}
+                            <span style="color: red;">{% trans 'Не Заполнен' %}</span>
+                          {% endif %}
+                          </p>
+                      </div>
+                  
+                      
+                  </div>
+                  <div class="card-body">
+                      <div class="row">
+                          <div class="container pb-2">
+                              <div class="row g-2">
+                                <div class="col-6 border-bottom">
+                                  <p class="fs-5">Скан паспорта</p>
+                              </div>
+                              <div class="col-6 border-bottom">
+                                  <p class="fs-5">Скан транскрипта</p>
+                              </div>
+                              <div class="col-6 border-bottom">
+                                  <p class="fs-5">Скан сертификата уровня английского языка</p>
+                              </div>
+                              <div class="col-6 border-bottom">
+                                  <p class="fs-5">Скан мотивационного письма</p>
+                              </div>
+                              <div class="col-6">
+                                  <p class="fs-5">Скан рекомендации</p>
+                              </div>
+                              <div class="col-6">
+                                  <p class="fs-5">Скан о вакцинации</p>
+                              </div>                                           
+                              </div>
+                          </div>                                                        
+                      </div>           
+                      <a href="{% url 'exchangeinfo-edit' application.pk %}" class="btn btn-primary">{% trans 'заполнить' %}</a>                                            
+                  </div>                                    
+              </div>                                   
+          </div>                                    
+      </div>                            
+  <div class="container pt-6">                        
+      <div class="d-flex align-items-center justify-content-center">
+          <div class="form-check" style="margin-right: 10px; margin-left:-90px;">
+              <input class="form-check-input" type="checkbox" value="" id="authorityRules">
+              <label class="form-check-label" for="authorityRules">
+                  <a href="#" style="text-decoration: none;">{% trans 'Пользовательское соглашение' %}</a>
+              </label>
+          </div>
+          <form method="post">
+            {% csrf_token %}
+            <button type="button" class="btn btn-primary" id = "submitBtn" disabled>{% trans 'Отправить' %}</button>
+          </form>
+      </div>
+  </div>
+</div>
+<!-- Bootstrap 4 -->
+<div class="modal fade" id="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">{% trans 'Не все поля заполнены' %}</h3>
+        <button type="button" class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ul>
+            {% for key, value in status.items %}
+              {% if not value %}
+                <li>{% trans 'Не все поля заполнены в разделе -'%} {{key}}</li>
+              {% endif %}
+            {% endfor %}
+        </ul>
+      </div>
+      <div class="modal-footer">
+       
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id = "btnHide">{% trans 'Закрыть' %}</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="{% static 'js/application.details.js' %}"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    
+    if ("{{status.exchangeinfo}}" === "True" && "{{status.documents}}" === "True" && "{{status.curriculum}}" === "True" && "{{status.personal}}" === "True"){
+        submitBtn.type = "submit"
+    }
+});
+
+submitBtn.addEventListener("click", function() {
+  if ("{{status.exchangeinfo}}" === "True" && "{{status.documents}}" === "True" && "{{status.curriculum}}" === "True" && "{{status.personal}}" === "True"){
+      console.log('Заполнены все поля');
+  }
+  else {
+      $("#modal").modal("show");
+  }
+});
+</script>
+{% endblock %}

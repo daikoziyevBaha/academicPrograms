@@ -1,0 +1,98 @@
+{% extends 'base_admin.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <div class="container px-4">
+        <div class="text-3x1 text-center">
+            <h1>Детали заявки
+        </div>
+        </h1>
+    </div>
+    <div class="container pt-6">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <div class="card shadow mb-4 px-0">
+                    <h5 class="card-header">Заявка - {{application.id}}</h5>
+                    <div class="card-body">
+
+                        <form action = "{% url 'open-app' application.id %}" method="post">
+                            {% csrf_token %}
+                            <input name = "pk" type="hidden">
+                            <div class="row g-2">
+
+                                <div class="col-6 pt-2">
+                                    <div class="form-outline ">
+                                        <!-- value - значение внутри формы -->
+                                        <input class="form-control bg-gray-100" id="formControlReadonly" type="text"
+                                            value="{{application.type}}" aria-label="readonly input example" readonly />
+                                        <label class="form-label" for="formControlReadonly">Type of exchange</label>
+                                    </div>
+                                </div>
+                                <div class="col-6 pt-2">
+                                    <div class="form-outline ">
+                                        <!-- value - значение внутри формы -->
+                                        <input class="form-control bg-gray-100" id="formControlReadonly" type="text"
+                                            value="{{application.academic_year}}" aria-label="readonly input example"
+                                            readonly />
+                                        <label class="form-label" for="formControlReadonly">Academic year</label>
+                                    </div>
+                                </div>
+                                <div class="col-6 pt-2">
+                                    <div class="form-outline ">
+                                        <!-- value - значение внутри формы -->
+                                        <input class="form-control bg-gray-100" id="formControlReadonly" type="text"
+                                            value="{{application.country}}" aria-label="readonly input example"
+                                            readonly />
+                                        <label class="form-label" for="formControlReadonly">Country</label>
+                                    </div>
+                                </div>
+                                <div class="col-6 pt-2">
+                                    <div class="form-outline ">
+                                        <!-- value - значение внутри формы -->
+                                        <input class="form-control bg-gray-100" id="formControlReadonly" type="text"
+                                            value="{{application.university}}" aria-label="readonly input example"
+                                            readonly />
+                                        <label class="form-label" for="formControlReadonly">University</label>
+                                    </div>
+                                </div>
+                                <div class="col-6 pt-2">
+                                    <div class="form-outline ">
+                                        <!-- value - значение внутри формы -->
+                                        <input class="form-control bg-gray-100" id="formControlReadonly" type="text"
+                                            value="{{application.desired_specialty}}"
+                                            aria-label="readonly input example" readonly />
+                                        <label class="form-label" for="formControlReadonly">Desired speciality</label>
+                                    </div>
+                                </div>
+                                <div class="col-6 pt-2">
+                                    <select name = "status" class="form-select border-primary border-2 "
+                                        aria-label="Default select example">
+                                        {% for status in statuses %}
+                                            {% if application.status == status %}
+                                                <option selected>{{status}}</option>
+                                            {% else %}
+                                                <option>{{status}}</option>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                            <div style="display: flex; justify-content: flex-end; padding-top: 1rem; gap: 1rem;">
+                                <button type="submit" class="btn btn-success px-5">Save</button>
+                                <a href="#"><button class="btn btn-danger px-3">Cancel</button></a>
+                            </div>
+                            <div class="start-100">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+{% endblock content %}

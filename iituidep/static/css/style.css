@@ -1,0 +1,424 @@
+body {
+  background: white;
+  overflow: auto;
+}
+
+*, ::before, ::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e2e8f0;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.header {
+  width: 100%;
+  position: sticky;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+.div {
+  display: block;
+}
+
+.exc-1 {
+  margin-bottom: 1.25rem;
+}
+
+article {
+  display: block;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.flex-frow {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.pt-6 {
+  padding-top: 1.5rem;
+}
+
+.text-3x1 {
+  font-size: 1.875rem;
+}
+
+.justify-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flex-wrap {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav__link {
+  text-transform: uppercase;
+  margin-top: 20px;
+  padding-right: 0.5rem;
+  padding: 0.25rem;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  color: black;
+  -webkit-transition: color 0.2s linear;
+  transition: color 0.2s linear;
+}
+
+.border-b-2 {
+  border-bottom-width: 2px;
+  --border-opacity: 1;
+  border-color: #e53e3e;
+  border-color: rgba(229, 62, 62, var(--border-opacity));
+}
+
+.nav__link:hover {
+  color: #e53e3e;
+}
+
+.text-red {
+  --text-opacity: 1;
+  color: #e53e3e;
+  color: rgba(229, 62, 62, var(--text-opacity));
+}
+
+.text-drop {
+  color: #212529;
+  text-decoration: none;
+  -webkit-transition: color 0.2s linear;
+  transition: color 0.2s linear;
+}
+
+.text-drop:hover {
+  color: #212529;
+  text-decoration: underline;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+hr {
+  border-style: solid;
+  border-width: 1px;
+  --border-opacity: 1;
+  border-color: #cbd5e0;
+  border-color: rgba(203, 213, 224, var(--border-opacity));
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.airplane {
+  padding: 0 0.625em;
+  margin: 1.375em 0;
+  margin-bottom: 0%;
+  margin-top: 0%;
+}
+
+.col-md-12 {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.link-under-p {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 1.25em 0 0;
+  line-height: 1.66666667;
+}
+
+.p-text-1 {
+  font-size: 1.75em;
+}
+
+.p-text-under {
+  font-size: 1em;
+  color: #A02337;
+  text-decoration: none;
+  -webkit-transition: color 0.2 linear;
+  transition: color 0.2 linear;
+}
+
+.p-text-under:hover {
+  text-decoration: underline;
+  color: #A02337;
+}
+
+.collapse:not(.show) {
+  display: none;
+}
+
+.collapsing {
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height 0.35s ease;
+  transition: height 0.35s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .collapsing {
+    -webkit-transition: none;
+    transition: none;
+  }
+}
+.collapsing.collapse-horizontal {
+  width: 0;
+  height: auto;
+  -webkit-transition: width 0.35s ease;
+  transition: width 0.35s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .collapsing.collapse-horizontal {
+    -webkit-transition: none;
+    transition: none;
+  }
+}
+
+.hstack {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+}
+
+.vstack {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+}
+
+.px-edit {
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.wi2 {
+  width: 230px;
+}
+
+.my-edit {
+  margin-top: 8px;
+}
+
+.he2 {
+  height: 20px;
+}
+
+.px-app-btn {
+  margin-left: 45%;
+}
+
+.app-content {
+  border: 1px;
+  margin-left: 20%;
+  margin-right: 20px;
+  background-color: aquamarine;
+}
+
+.redac {
+  height: 20px;
+  width: 20px;
+}
+
+span.scan-green {
+  color: #0bc50b;
+}
+
+span.scan-gray {
+  color: gray;
+}
+
+span.scan-red {
+  color: red;
+}
+
+.input-group-append {
+  cursor: pointer;
+}
+
+.sidenav {
+  height: 100%;
+  /* 100% Full-height */
+  width: 0;
+  /* 0 width - change this with JavaScript */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Stay on top */
+  top: 0;
+  /* Stay at the top */
+  left: 0;
+  background-color: #111;
+  /* Black*/
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  padding-top: 60px;
+  /* Place content 60px from the top */
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  -webkit-transition: margin-left 0.5s;
+  transition: margin-left 0.5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+.asdbtn {
+  position: fixed;
+  padding-left: 12px;
+  padding-top: 10px;
+  font-size: 36px;
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin 0.25s ease-out;
+  transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#page-content-wrapper {
+  min-width: 0;
+  width: 100%;
+}

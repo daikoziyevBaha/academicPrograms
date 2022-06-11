@@ -1,0 +1,138 @@
+import pygame
+import time
+pygame.init()
+ 
+'''создаём окно программы'''
+ 
+back = (200, 255, 255) #цвет фона (background)
+mw = pygame.display.set_mode((500, 500)) #окно программы (main window)
+mw.fill(back)
+clock = pygame.time.Clock()
+ 
+'''класс прямоугольник'''
+ 
+class Area():
+   def __init__(self, x=0, y=0, width=10, height=10, color=None):
+       self.rect = pygame.Rect(x, y, width, height) #прямоугольник
+       self.fill_color = color
+ 
+   def color(self, new_color):
+       self.fill_color = new_color
+ 
+   def fill(self):
+       pygame.draw.rect(mw, self.fill_color, self.rect)
+   def outline(self, frame_color, thickness): #обводка существующего прямоугольника
+       pygame.draw.rect(mw, frame_color, self.rect, thickness)    
+ 
+   def collidepoint(self, x, y):
+       return self.rect.collidepoint(x, y)       
+ 
+'''класс надпись'''
+ 
+class Label(Area):
+   def set_text(self, text, fsize=12, text_color=(0, 0, 0)):
+       self.image = pygame.font.SysFont('verdana', fsize).render(text, True, text_color)
+ 
+   def draw(self, shift_x=0, shift_y=0):
+       self.fill()
+       mw.blit(self.image, (self.rect.x + shift_x, self.rect.y + shift_y))
+ 
+RED = (255, 0, 0)
+GREEN = (0, 255, 51)
+YELLOW = (255, 255, 0)
+DARK_BLUE = (0, 0, 100)
+BLUE = (80, 80, 255)
+LIGHT_GREEN = (200, 255, 200)
+LIGHT_RED = (250, 128, 114)
+BLACK = (0, 0, 0)
+
+cards = []
+num_cards = 4
+ 
+x = 70
+ 
+for i in range(num_cards):
+   new_card = Label(x, 170, 70, 100, YELLOW)
+   new_card.outline(BLUE, 10)
+   new_card.set_text('CLICK', 26)
+   cards.append(new_card)
+   x = x + 100
+ 
+ 
+wait = 0
+ 
+from random import randint
+
+time_text = Label(0,0, 50, 50, back)
+time_text.set_text("Время:", 40, DARK_BLUE)
+timer = Label(0, 30, 50, 50, back)
+timer.set_text("0", 40, DARK_BLUE)
+
+score_text = Label(400, 0, 50, 50, back)
+score_text.set_text("Очки:", 40, DARK_BLUE)
+score = Label(400, 30, 50, 50, back)
+score.set_text("0", 40, DARK_BLUE)
+
+time_text.draw(10,10)
+score_text.draw(10,10)
+timer.draw(10,10)
+score.draw(10,10)
+
+start_time = time.time()
+cur_time = start_time
+
+points = 0
+while True:
+    if wait == 0:
+        #переносим надпись:
+        wait = 20 #столько тиков надпись будет на одном месте
+        click = randint(1, num_cards)
+        for i in range(num_cards):
+            cards[i].color(YELLOW)
+            if (i + 1) == click:
+                cards[i].draw(10, 40)
+            else:
+                cards[i].fill()
+    else:
+        wait -= 1
+    
+    #на каждом тике проверяем клик:
+    for event in pygame.event.get():
+        if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+            x, y = event.pos
+            for i in range(num_cards):
+                #ищем, в какую карту попал клик
+                if cards[i].collidepoint(x,y):
+                    if i + 1 == click: #если на карте есть надпись - перекрашиваем в зелёный, плюс очко
+                        cards[i].color(GREEN)
+                        points += 1
+                    else: #иначе перекрашиваем в красный, минус очко
+                        cards[i].color(RED)
+                        points -= 1
+                    score.set_text(str(points), 40, DARK_BLUE)
+                    score.draw(10,10)
+                    cards[i].fill()
+    
+    new_time = time.time()
+
+    if new_time - cur_time >= 1:
+        timer.set_text(str(int(new_time - start_time)), 40, DARK_BLUE)
+        timer.draw()
+        cur_time = new_time
+
+    if new_time - start_time >= 10:
+        lose = Label(0, 0, 500, 500, LIGHT_RED)
+        lose.set_text("Ты продул!", 60, BLACK)
+        lose.draw(100,100)
+        break
+    
+    if points >= 5:
+        lose = Label(0, 0, 500, 500, LIGHT_GREEN)
+        lose.set_text("Ты выиграл!", 60, BLACK)
+        lose.draw(100,100)
+        break
+
+    pygame.display.update()
+    clock.tick(40)
+
+pygame.display.update()

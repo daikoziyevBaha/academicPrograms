@@ -1,0 +1,76 @@
+{% extends 'base_main.html' %}
+{% load static %}
+{% block content %}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <div class="title" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+        <h1>Outgoing Exchange</h1>
+    </div>
+    <div class="container m-auto px-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">        
+        <div class="py-3 px-4 w-75 p-3"  >
+            <img style="width: 100%" alt="aboutIITU.png"  src="https://iitu.edu.kz/media/images/Prezentatsiia_po_deiatelnosti_DMSiAM_s_izmeneni.original.jpg" width="1139">
+        </div>     
+    </div>
+    <div class="row justify-content-center pt-6">
+        <a href="{% url 'application' %}" class="row justify-content-center" style="text-decoration:none;"><button class="btn btn-lg btn-dark" style="width: 350px;" >Подать заявку онлайн</button></a>
+    </div>
+    <div class="container pt-6 m-auto px-4 w-75" style="color: rgb(112, 105, 105);">
+
+        <p class="fs-4 mb-2">IITU offers an exceptional education in a unique region of the world. Located in Almaty, the financial capital of Central Asia, students have the opportunity to experience Central Asian culture in a dynamic and modern environment.</p>
+        <p class="fs-4 mb-2">Choosing to study at a foreign university for your Bachelor’s, Master’s or Doctor’s is a major decision – and one that will inevitably shape the direction of your future career and network.</p>
+        <p class="fs-4 mb-2">IITU offers 24 English language accredited educational programs for undergraduate studies including Software Engineering, Computer Security, Business Analytics, Digital Marketing and Business Journalism and etc., 7 Master and 2 PhD programs.</p>
+        <p class="fs-4 mb-2">International Students may take classes here in various capacities: as a Degree or Dual Degree student; through an exchange program as well.</p>
+        <p class="fs-4">IITU accepts applications throughout the year. All applications should be sent directly to the Admissions and Department of International Affairs, which can assist you in finding suitable accommodation, and preparing admitted students for life in Almaty and study at IITU.</p>
+
+        <hr>
+
+        <div class="text-center pt-6 pb-4"><h3>Guide for International Student</h3></div>
+        <p class="fs-4 m-0">Admission of foreign citizens to study at universities on a paid basis is carried out according 
+            to the results of the interview conducted by Admissions of IITU during the calendar year.
+        </p>
+                                
+        <hr>
+
+        <div class="text-center pt-6 pb-4"><h3>Entry Requirements</h3></div>
+        <p class="fs-4">Entrance examination will include (might be online):</p>
+        <ul>
+            <li class="fs-5">Interview with academic staff</li>
+            <li class="fs-5">Language competence (IELTS, TOEFL or Level test)</li>
+            <li class="fs-5">If English is a mother tongue of the applicant the corresponding exam is not required.</li>
+        </ul>
+
+        <p class="fs-4">International certificates Minimum score:</p>
+        <ul>
+            <li class="fs-5">IELTS: no less than 5,5</li>
+            <li class="fs-5">TOEFL iTP: 460 score</li>
+            <li class="fs-5">TOEFL iBT: 87 score</li>
+            <li class="fs-5">TOEFL: 560 score</li>
+        </ul>
+
+        <p class="fs-4">Applicants must provide following documents in scan version to our email address: int@iitu.kz:</p>
+        <ul>
+            <li class="fs-5">Photocopy of your passport.</li>
+            <li class="fs-5">Photocopy of a completed proof of degree form, signed and stamped by your institution, 
+                a final transcript stating that your degree has been awarded with the final grade and date of award.</li>
+            <li class="fs-5">You are required to pass a Skype (WeChat, Telegramm) or on-site interview with the 
+                appointed member of the Admission Commission to check your academic level according the Programme.</li>
+            <li class="fs-5">You are required to submit a photocopy of IELTS or TOEFL with the score stated in your offer letter.</li>
+        </ul>
+
+        <p class="fs-5 m-0">If you do not have a proof document of your level of English, IITU may arrange to take the test at IITU. Please contact using the email indicated at the time of the offer.</p>
+
+        <p class="fs-5">For all further details please contact int@iitu.kz</p>
+
+        <hr>
+        <!-- Button trigger modal -->
+        <div class="row mb-6 justify-content-center pt-6">
+            <a href="{% url 'application' %}" class="row justify-content-center" style="text-decoration:none;"><button class="btn btn-lg btn-dark" style="width: 350px;" >Подать заявку онлайн</button></a>
+        </div>
+
+    </div>  
+</div>
+</div>
+</div>
+</div>
+
+{% endblock content %}

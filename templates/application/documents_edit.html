@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load applications %}
+{% load static%}
+{% load i18n %}
+
+{% block content %}
+<h2 style="text-align: center;">{% trans 'Документы' %}</h2>
+
+<form action = '#' method="post" enctype="multipart/form-data" class="form-group">
+    {% csrf_token %}
+    {% for f in form %}
+        {% if f.label == 'Application id'%}
+            {{f}}
+        {% else %}
+            {% if f.value %}
+            <div class="px-edit pt-6">
+                <p class="fs-5 fw-blod">
+                    <i class="fa-solid fa-circle-question h6" data-bs-toggle="tooltip" data-bs-placement="left" title="{% trans 'Загрузите скан дкумента| Размер не должен превышать 5МБ| Расширение: PDF/PNG/JPG' %}"></i>
+                    {{f.label}}: <span class="scan-gray fs-6">{{f.value|get_file_name}}</span> <span class="scan-green"> {% trans 'Отправлен' %}!</span>
+                </p>
+                {{f}}        
+            </div>
+            {% else %}
+            <div class="px-edit pt-6">
+                <p class="fs-5 fw-blod">
+                    <i class="fa-solid fa-circle-question h6" data-bs-toggle="tooltip" data-bs-placement="left" title="{% trans 'Загрузите скан дкумента| Размер не должен превышать 5МБ| Расширение: PDF/PNG/JPG' %}"></i>
+                    {{f.label}}: <span class="scan-grey"></span>
+                </p>
+                {{f}}        
+            </div>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+    <div class="px-edit pt-6">
+        <a href="{% url 'application-details' pk %}"><button type="button" class="btn btn-danger">{% trans 'Отменить' %}</button></a>
+        <button type="submit" class="btn btn-primary position-relative start" style="margin-left: 57.2%;">{% trans 'Сохранить изменения' %}</button>                   
+    </div>
+</form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script> 
+<script src="{% static 'js/documents.edit.js' %}"></script>
+<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+<script>
+    ScrollReveal().reveal('div', { delay: 500 });
+</script>
+{% endblock %}

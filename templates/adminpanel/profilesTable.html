@@ -1,0 +1,137 @@
+{% extends 'base_admin.html' %}
+{% load static %}
+{% load adminfilter %}
+{% load i18n %}
+
+
+{% block content %}
+{% trans 'Имя студента' as name %}
+{% trans 'Почта' as email %}
+{% trans 'Телефон' as phone %}
+{% trans 'Дата рождения' as birth_date %}
+{% trans 'Пол' as gender %}
+{% trans 'Страна' as country %}
+{% trans 'Университет' as university %}
+{% trans 'Степень' as degree %}
+{% trans 'Специальность' as specialty %}
+{% trans 'Начало обучения' as start_year %}
+{% trans 'Дата выпуска' as graduation_year %}
+{% trans 'Паспорт' as passport %}
+{% trans 'Кем выдан' as passport_authority %}
+{% trans 'Дата выдачи' as date_of_issue %}
+{% trans 'Дата просрочки' as date_of_expiry %}
+{% trans 'Контактное лицо' as contact_person %}
+{% trans 'Номер контактного лица' as contact_person_phone %}
+{% trans 'Почта контактного лица' as contact_person_email %}
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">{% trans 'Профили пользователей' %}</h1>
+        <p class="mb-4">{% trans 'Таблица отображает Профили студентов со всеми полями, Видимость полей - позволяет выбрать колонки которые вас интересуют Экспорт данных реализуется при нажатии на кнопки панели (COPY/PRINT/EXCEL/PDF), Каждое поле имеет фильтрацию в виде поиска' %}. 
+
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">{% trans 'Профили пользователей' %}</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="profilesTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>{{name}}</th>
+                                <th>{{email}}</th>
+                                <th>{{phone}}</th>
+                                <th>{{birth_date}}</th>
+                                <th >{{gender}}</th>
+                                <th >{{country}}</th>
+                                <th >{{university}}</th>
+                                <th>{{degree}}</th>
+                                <th>{{specialty}}</th>
+                                <th >{{start_year}}</th>
+                                <th>{{graduation_year}}</th>
+                                <th>{{passport}}</th>
+                                <th>{{passport_authority}}</th>
+                                <th>{{date_of_issue}}</th>
+                                <th>{{date_of_expiry}}</th>
+                                <th>{{contact_person}}</th>
+                                <th>{{contact_person_phone}}</th>
+                                <th>{{contact_person_email}}</th>
+                            </tr>
+                            <tr class="filters">
+                                <th><input type="select" placeholder="{{name}}"></th>
+                                <th><input type="select" placeholder="{{email}}"></th>
+                                <th ><input type="select" placeholder="{{phone}}"></th>
+                                <th></th>
+                                <th ><input type="select" placeholder="{{gender}}"></th>
+                                <th ><input type="select" placeholder="{{country}}"></th>
+                                <th ><input type="select" placeholder="{{university}}"></th>
+                                <th ><input type="select" placeholder="{{degree}}"></th>
+                                <th><input type="select" placeholder="{{specialty}}"></th>
+                                <th><input type="select" placeholder="{{start_year}}"></th>
+                                <th><input type="select" placeholder="{{graduation_year}}"></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th><input type="select" placeholder="{{contact_person}}"></th>
+                                <th></th>
+                                <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for profile in profiles %}
+                            <tr>
+                                <td><a href="{% url 'profile-details' profile.id %}">{{profile.first_name_pi}}</a></td>
+                                <td>{{profile.email_pi}}</td>
+                                <td>{{profile.phone_pi}}</td>
+                                <td>{{profile.birth_date_pi}}</td>
+                                <td>{{profile.gender_pi}}</td>
+                                <td>{{profile.country_ci}}</td>
+                                <td>{{profile.university_ci}}</td>
+                                <td>{{profile.degree_ci}}</td>
+                                <td>{{profile.specialty_ci}}</td>
+                                <td>{{profile.start_year_ci}}</td>
+                                <td>{{profile.graduation_year_ci}}</td>
+                                <td>{{profile.passport_id_pi}}</td>
+                                <td>{{profile.passport_authority_pi}}</td>
+                                <td>{{profile.date_of_issue_pi}}</td>
+                                <td>{{profile.date_of_expiry_pi}}</td>
+                                <td>{{profile.contact_person_pi}}</td>
+                                <td>{{profile.contact_person_phone_pi}}</td>
+                                <td>{{profile.contact_person_email_pi}}</td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>{{name}}</th>
+                                <th>{{email}}</th>
+                                <th>{{phone}}</th>
+                                <th>{{birth_date}}</th>
+                                <th >{{gender}}</th>
+                                <th >{{country}}</th>
+                                <th >{{university}}</th>
+                                <th>{{degree}}</th>
+                                <th>{{specialty}}</th>
+                                <th >{{start_year}}</th>
+                                <th>{{graduation_year}}</th>
+                                <th>{{passport}}</th>
+                                <th>{{passport_authority}}</th>
+                                <th>{{date_of_issue}}</th>
+                                <th>{{date_of_expiry}}</th>
+                                <th>{{contact_person}}</th>
+                                <th>{{contact_person_phone}}</th>
+                                <th>{{contact_person_email}}</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+
+{% endblock content %}

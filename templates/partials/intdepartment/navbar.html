@@ -1,0 +1,44 @@
+<!-- Topbar -->
+{% load static %}
+{% load i18n %}
+
+
+
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" >
+    
+        <div class="logo"style = "margin-left: 10rem;">
+            <img style="width:100%;" src="https://iitu.edu.kz/static/images/logo_t.4952bf3bcd74.png " alt="IITU logo">
+        </div>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+            <a class="nav-link text-gray-600" href="https://iitu.edu.kz/ru/articles/sotrudnicestvo/">{% trans 'Международный департамент' %}</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link text-gray-600" href="https://iitu.edu.kz/ru/articles/sotrudnicestvo/akademiceskaa-mobil_nost_/">{% trans 'Академическая мобильность' %}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-gray-600" href="{% url 'incoming' %}">{% trans 'Входящая мобильность' %}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-gray-600" href="{% url 'outgoing' %}">{% trans 'Исходящая мобильность' %}</a>
+            </li>
+        
+        </ul>
+    
+        <form action="{% url 'set_language' %}" method="post" class="mr-2">
+            {% csrf_token %}
+            <input name="next" type="hidden" value="{{ redirect_to }}">
+            <select name="language">
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% for language in languages %}
+                    <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                        {{ language.name_local }} ({{ language.code }})
+                    </option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Go" class="bg-white shadow border border-secondary rounded-circle">
+        </form> 
+</nav>
+<!-- End of Topbar -->

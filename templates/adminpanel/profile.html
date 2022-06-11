@@ -1,0 +1,240 @@
+{% extends 'base_admin.html' %}
+{% load static%}
+{% load i18n %}
+
+{% block content %}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <div class="container px-4 pt-6">
+        <h3>{% trans 'Профиль студента' %}</h3>
+    </div>
+    
+    <div class="container pt-6">
+        <div class="row justify-content-center">
+            <div class="col-sm-6">                                
+                <div class="card shadow mb-4 px-0">
+                    <h5 class="card-header">{% trans 'Личная информация' %}</h5>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="container pb-2">
+                                <div class="row g-2">
+                                    <div class="col-6">
+                                        <div class="form-outline ">
+                                            <!-- value - значение внутри формы -->
+                                            <input
+                                                class="form-control bg-white"
+                                                id="formControlReadonly"
+                                                type="text"                                                                    
+                                                value="{{profile.first_name_pi}}"
+                                                aria-label="readonly input example"
+                                                readonly
+                                            />
+                                            <label class="form-label" for="formControlReadonly">{% trans 'Имя' %}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-outline ">
+                                            <!-- value - значение внутри формы -->
+                                            <input
+                                              class="form-control bg-white"
+                                              id="formControlReadonly"
+                                              type="text"
+                                              value="{{profile.last_name_pi}}"
+                                              aria-label="readonly input example"
+                                              readonly
+                                            />
+                                            <label class="form-label" for="formControlReadonly">{% trans 'Фамилия' %}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 pt-2">
+                                        <div class="form-outline ">
+                                            <input
+                                              class="form-control bg-white"
+                                              id="formControlReadonly"
+                                              type="text"
+                                              value="{{profile.birth_date_pi}}"
+                                              aria-label="readonly input example"
+                                              readonly
+                                            />
+                                            <label class="form-label" for="formControlReadonly">{% trans 'Дата рождения' %}</label>
+                                        </div>
+                                      </div>
+                                    <div class="col-6 pt-2">
+                                        <div class="form-outline">
+                                            <input
+                                              class="form-control bg-white"
+                                              id="formControlReadonly"
+                                              type="text"
+                                              value="{{profile.email_pi}}"
+                                              aria-label="readonly input example"
+                                              readonly
+                                            />
+                                            <label class="form-label" for="formControlReadonly">{% trans 'E-mail адрес' %}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 pt-2">
+                                        <div class="form-outline ">
+                                            <input
+                                              class="form-control bg-white"
+                                              id="formControlReadonly"
+                                              type="text"
+                                              value="{{profile.phone_pi}}"
+                                              aria-label="readonly input example"
+                                              readonly
+                                            />
+                                            <label class="form-label" for="formControlReadonly">{% trans 'Номер телефона' %}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>                                    
+                </div>
+            </div>
+            <div class="col-sm-6">                                
+                <div class="card shadow mb-4 px-0">
+                    <h5 class="card-header">{% trans 'Образование' %}</h5>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="container pb-2">
+                                <div class="row g-2">
+                                    <div class="col-6">
+                                        <div class="form-outline ">
+                                            <!-- value - значение внутри формы -->
+                                            <input
+                                              class="form-control bg-white"
+                                              id="formControlReadonly"
+                                              type="text"
+                                              value="{{profile.university_ci}}"
+                                              aria-label="readonly input example"
+                                              readonly
+                                            />
+                                            <label class="form-label" for="formControlReadonly">{% trans 'Университет' %}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-outline ">
+                                            <!-- value - значение внутри формы -->
+                                            <input
+                                              class="form-control bg-white"
+                                              id="formControlReadonly"
+                                              type="text"
+                                              value="{{profile.country_ci}}"
+                                              aria-label="readonly input example"
+                                              readonly
+                                            />
+                                            <label class="form-label" for="formControlReadonly">{% trans "Страна" %}</label>
+                                        </div>                                                        
+                                    </div>
+                                    <div class="col-6 pt-2">
+                                        <div class="form-outline ">
+                                            <!-- value - значение внутри формы -->
+                                            <input
+                                              class="form-control bg-white"
+                                              id="formControlReadonly"
+                                              type="text"
+                                              value="{{profile.start_year_ci}}"
+                                              aria-label="readonly input example"
+                                              readonly
+                                            />
+                                            <label class="form-label" for="formControlReadonly">{% trans 'Начало обучения' %}</label>
+                                        </div>                                                          
+                                    </div>
+                                    <div class="col-6 pt-2">
+                                        <div class="form-outline ">
+                                            <!-- value - значение внутри формы -->
+                                            <input
+                                              class="form-control bg-white"
+                                              id="formControlReadonly"
+                                              type="text"
+                                              value="{{profile.graduation_year_ci}}"
+                                              aria-label="readonly input example"
+                                              readonly
+                                            />
+                                            <label class="form-label" for="formControlReadonly">{% trans 'Год окончания' %}</label>
+                                        </div>                                                            
+                                    </div>
+                                    
+                                    
+                                    <div class="col-6 pt-2">
+                                        <div class="form-outline ">
+                                            <!-- value - значение внутри формы -->
+                                            <input
+                                              class="form-control bg-white"
+                                              id="formControlReadonly"
+                                              type="text"
+                                              value="{{profile.specialty_ci}}"
+                                              aria-label="readonly input example"
+                                              readonly
+                                            />
+                                            <label class="form-label" for="formControlReadonly">{% trans 'Специальность' %}</label>
+                                        </div>                                                            
+                                    </div>
+                                    <div class="col-6 pt-2">
+                                        <div class="form-outline ">
+                                            <!-- value - значение внутри формы -->
+                                            <input
+                                              class="form-control bg-white"
+                                              id="formControlReadonly"
+                                              type="text"
+                                              value="{{profile.degree_title_ci}}"
+                                              aria-label="readonly input example"
+                                              readonly
+                                            />
+                                            <label class="form-label" for="formControlReadonly">{% trans 'Степень' %}</label>
+                                        </div>                                                            
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>                                    
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <h4 class="text-center pb-4">{% trans 'Заявки студента' %}</h4>
+            {% for app in applications %}
+            <div class="col-sm-6">                                
+                <div class="card shadow mb-4 px-0">
+                    <h5 class="card-header">{% trans 'Заявка' %} - {{app.id}}</h5>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="container pb-2">
+                                <div class="row g-2">
+                                    <div class="col-6">
+                                        <h5>{% trans 'Тип мобильности' %}: </h5> {{app.type}}
+                                    </div>
+                                    <div class="col-6">
+                                        <h5>{% trans 'Период' %}: </h5> {{app.academic_year}}
+                                    </div>
+                                    <div class="col-6">
+                                        <h5>{% trans 'Страна' %}: </h5> {{app.country}}
+                                      </div>
+                                    <div class="col-6">
+                                        <h5>{% trans 'Университет' %}: </h5> {{app.university}}
+                                    </div>
+                                    <div class="col-6">
+                                        <h5>{% trans 'Желаемая специальность' %}: </h5> {{app.desired_specialty}}
+                                    </div>
+                                    <div class="col-6">
+                                        <h5>{% trans "Статус" %}: </h5> {{app.desired_specialty}}
+                                    </div>
+                                </div>
+                            </div>                                                
+                        </div>
+                    </div>                                    
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+        
+    </div>
+</div>
+
+{% endblock content%}

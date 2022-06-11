@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load applications %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<div class="container-fluid">
+    {% include 'partials/messages.html'%}
+    <div class="container px-4">
+        <div class="text-3x1 text-center" >{% trans 'Заявки на Академическую мобильность' %}</div>
+    </div>
+    <div class="pt-6" style="padding-left: 37%;">
+        <a href="{% url 'create-application' %}" id = "link">
+            <button type="button" class="btn btn-success wi2" style="width: 350px;" id = "createBtn" disabled>Создать</button>
+        </a>
+    </div>
+    <div class="label mt-5" style="display: flex; justify-content: center; align-items: center;">
+        {% if not applications %}
+            <h3> {% trans 'У вас нет активных Заявок' %}</h3>
+        {% else %}
+    </div>
+    
+        
+        <div class="container pt-6">
+            <div class="row justify-content-center">
+                {% for application in applications %}
+                
+                    <div class="col-sm-6">                                
+                        <div class="card shadow mb-4 px-0">
+                            <form action = "{% url 'delete-application' application.id %}" method="post">
+                                {% csrf_token %}
+                                <h5 class="card-header">{% trans 'Заявка' %} - {{application.id}}</h5>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="container pb-2">
+                                            <div class="row g-2">
+                                                <div class="col-6">
+                                                    <h5>{% trans 'Тип мобильности:' %} </h5> {{application.type}}
+                                                </div>
+                                                <div class="col-6">
+                                                    <h5>{% trans 'Академический год:' %}</h5> {{application.academic_year}}
+                                                </div>
+                                                <div class="col-6">
+                                                    <h5>{% trans 'Страна:' %}</h5> {{application.country}}
+                                                  </div>
+                                                <div class="col-6">
+                                                    <h5>{% trans 'Университет:' %} </h5> {{application.university}}
+                                                </div>
+                                                <div class="col-6">
+                                                    <h5>{% trans 'Желаемая специальность:' %} </h5> {{application.desired_specialty}}
+                                                </div>
+                                                <div class="col-6"></div><div class="col-6"></div>
+                                                
+                                            </div>
+                                        </div>  
+                                    </div>
+                                    <div style="text-align: right;">
+                                        <a href="{% url 'application-details' application.id %}" class="btn btn-primary">{% trans 'редактировать' %}</a>
+                                        <button type="submit" class="btn btn-danger" value="удалить">{% trans 'удалить' %}</button>
+                                    </div>
+                                    
+                        
+                                </div>    
+                            </form>                                  
+                        </div>
+                    </div>
+                
+                {% endfor %}
+            </div>
+        </div>
+        
+    {% endif  %}
+</div>
+<script src="{% static 'js/application.js' %}"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        if ("{{personal_status}}" === "True" && "{{curriculum_status}}" === "True"){
+            createBtn.style.cursor = "pointer";
+            createBtn.disabled = false;
+        } else {
+            createBtn.disabled = true;
+            createBtn.style.cursor = "not-allowed";
+        }
+    });
+</script>
+{% endblock %}

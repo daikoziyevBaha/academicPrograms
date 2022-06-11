@@ -1,0 +1,115 @@
+{% extends 'base_auth.html' %}
+{% load static %}
+
+
+{% block content %}
+<style>
+  .invalid-feedback {
+    position: unset !important;
+  }
+  
+</style>
+<div class="container">
+
+  <div class="card o-hidden border-0 shadow-lg my-5">
+      <div class="card-body p-0">
+          <!-- Nested Row within Card Body -->
+          <div class="row">
+              <div class="col-lg-5 d-none d-lg-block bg-llogin">
+                  <h4 class="text-center pt-6">Департамент Междунардных Отношений</h4>
+                  <img style="width:80%; position: relative; left: 50px; top:30px;" src="{% static 'images/iitu-auth.png' %}" alt="IITU">
+
+              </div>
+              <div class="col-lg-7">
+                  <div class="p-5">
+                      <div class="text-center">
+                          <h1 class="h4 text-gray-900 mb-4">Регистрация</h1>
+                          
+                      </div>
+                      <form action="{% url 'register' %}" method="post" class="user">
+                        {% csrf_token %}
+              
+                        {% include 'partials/messages.html' %}
+                          <div class="form-group row">
+                              <div class="col-sm-6 mb-2 mb-sm-0">
+                                <input
+                                  type="text"
+                                  name="first_name"
+                                  placeholder="Имя"
+                                  class="form-control form-control-user"
+                                  id="firstNameField"
+                                  value="{{fieldValues.first_name}}"
+                                />
+                                <div class="firstNameFeedBackArea invalid-feedback mt-0 " style="position: unset;"></div>
+                              </div>
+                              
+                              <div class="col-sm-6">
+                                <input
+                                  type="text"
+                                  name="last_name"
+                                  placeholder="Фамилия"
+                                  class="form-control form-control-user"
+                                  id="lastNameField"
+                                  value="{{fieldValues.last_name}}"
+                                />
+                                <div class="lastNameFeedBackArea invalid-feedback mt-0 mb-1"></div>
+                              </div>
+                              
+                          </div>
+                          <div class="form-group">
+                            <input
+                              type="email"
+                              name="email"
+                              placeholder="Email"
+                              class="form-control form-control-user"
+                              id="emailField"
+                              value="{{fieldValues.email}}"
+                              />
+                              <div class="emailFeedBackArea invalid-feedback mt-0 mb-1" style="display:none">
+                              </div>
+                          </div>
+                            
+                          <div class="form-group row">
+                              <div class="col-sm-6 mb-3 mb-sm-0">
+                                <input
+                                    type="password"
+                                    name="password"
+                                    placeholder="Password"
+                                    class="form-control form-control-user"
+                                    id="passwordField"
+                                  />
+                              </div>
+                              <div class="col-sm-6">
+                                <input
+                                  type="password"
+                                  name="confirm-password"
+                                  placeholder="Confirm Password"
+                                  class="form-control form-control-user"
+                                  id="confirmPasswordField"
+                                  />
+                              </div>
+                              <small class="float-right py-3 showPasswordToggle">Показать</small>
+                          </div>
+                          
+                          <input id = "submitBtn" type="submit" value="Регистрация" class="btn btn-primary btn-user btn-block"/>
+                              
+                        
+                      </form>
+                      <hr>
+                      <div class="text-center">
+                          <a class="small" href="#">Забыли пароль?</a>
+                      </div>
+                      <div class="text-center">
+                          <a class="small" href="{% url 'login' %}">Есть аккаунт? Авторизация!</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+</div>
+
+<script src="{% static 'js/register.js' %}"></script>
+
+{% endblock content %}

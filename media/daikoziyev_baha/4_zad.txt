@@ -1,0 +1,50 @@
+from random import randint
+from time import sleep
+class Ghost():
+    def __init__(self, nickname, color, feature):
+        self.nickname = nickname
+        self.color = color
+        self.feature = feature
+    def print_string(self):
+        print(self.color, self.nickname, self.feature)
+ 
+class Pacman():
+    def __init__(self, points, lives):
+        self.points = points
+        self.lives = lives
+    def eat_points(self):
+        points = randint(20,50)
+        self.points += points
+        if self.points > 240:
+            self.points = 240  
+ 
+pacman = Pacman(0, 5)
+ 
+ghosts = list()
+ghosts.append(Ghost('Blinky', 'Красный', 'захватывает пакмена в плен'))
+ghosts.append(Ghost('Pinky', 'Розовый', 'устраивает засаду пакмену'))
+ghosts.append(Ghost('Inky', 'Голубой', 'неожиданно выскакивает из-за угла лабиринта'))
+ 
+print('Игра началась!\n')
+play = True
+while play == True:
+   choice = randint(1, 4)
+   if choice == 1 or choice == 3:
+       pacman.eat_points()
+       if pacman.points == 240:
+           print('Победа! Pac-man съел все 240 точек')
+           play = False
+       else:
+           print('Удача!')
+           print('Pac-man съел:', pacman.points, '/', 240, 'точек\n')
+   else:
+       g = randint(0, 2)
+       ghosts[g].print_string()
+       pacman.lives -= 1
+       if pacman.lives == 0:
+           print('Игра окончена! Вы проиграли.')
+           print('Pac-man съел:', pacman.points, '/', 240, 'точек\n')
+           play = False
+       else:
+           print('Минус 1 жизнь. Осталось', pacman.lives, '\n')
+   sleep(1)

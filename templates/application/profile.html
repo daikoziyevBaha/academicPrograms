@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+
+{% block content %}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <div class="container px-4 pb-2">
+        <div class="text-3x1 text-center">{% trans 'Личная информация' %}</div>
+    </div>
+<form action = "#" method="post" enctype="multipart/form-data" class="form-group">
+    {% csrf_token %}
+    <div class="form-error">{{ form.non_field_errors }}</div>
+    <div class="container pt-6">
+        <div class="row g-2 px-edit">
+            <div class="col-md">
+                <div class="form-outline mb-3 bg-white">
+                    {{form.first_name_pi}}
+                    <label class="form-label" for="{{form.first_name_pi.id_for_label}}">{{form.first_name_pi.label}}</label>
+                </div>
+                <div class="form-error">{{ form.first_name_pi.errors }}</div>
+            </div>
+            <div class="col-md">
+                <div class="form-outline mb-3 bg-white">
+                    {{form.last_name_pi}}
+                    <label class="form-label" for="{{form.last_name_pi.id_for_label}}">{{form.last_name_pi.label}}</label>
+                </div>
+                <div class="form-error">{{ form.last_name_pi.errors }}</div>
+            </div>
+        </div>
+        <div class="px-edit">
+            <div class="form-outline mb-3 bg-white">
+                {{form.patronymic_pi}}
+                <label class="form-label" for="{{form.patronymic_pi.id_for_label}}">{{form.patronymic_pi.label}}</label>
+            </div>
+            <div class="form-error">{{ form.patronymic_pi.errors }}</div>
+        </div>
+        <div class="px-edit">
+            <div class="form-outline mb-3 bg-white">
+                {{form.email_pi}}
+                <label class="form-label" for="{{form.email_pi.id_for_label}}">{{form.email_pi.label}}</label>
+            </div>
+            <div class="form-error">{{ form.email_pi.errors }}</div>
+        </div>
+        <div class="px-edit ">
+            <div class="form-outline mb-3 bg-white">
+                {{form.phone_pi}}
+                <label class="form-label" for="{{form.phone_pi.id_for_label}}">{{form.phone_pi.label}}</label>
+            </div>
+            <div class="form-error">{{form.phone_pi.errors}}</div>
+        </div>
+        <div class="px-edit" style="margin-top: 16px">
+            
+                {{form.birth_date_pi}}
+            
+            <label for="{{form.birth_date_pi.id_for_label}}" >{{form.birth_date_pi.label}}</label>
+        </div>
+        <div class="form-error">{{ form.birth_date_pi.errors }}</div>
+        <div class="px-edit" style="margin: 8px 0 0;">
+            {{form.gender_pi}}
+        </div>
+        <div class="form-error">{{ form.gender_pi.errors }}</div>
+        <div class="row g-2 px-edit" style="margin-top: 8px;">
+            <div class="col-md">
+                <div class="form-outline mb-3  bg-white">
+                    {{form.passport_id_pi}}
+                    <label class="form-label" for="{{form.passport_id_pi.id_for_label}}">{{form.passport_id_pi.label}}</label>
+                </div>
+                <div class="form-error">{{ form.passport_id_pi.errors }}</div>
+            </div>
+            <div class="col-md">
+                <div class="form-outline mb-3 bg-white">
+                    {{form.passport_authority_pi}}
+                    <label class="form-label" for="{{form.passport_authority_pi.id_for_label}}">{{form.passport_authority_pi.label}}</label>
+                </div>
+                <div class="form-error">{{form.passport_authority_pi.errors}}</div>
+            </div>
+        </div>
+
+        <div class="row g-2 px-edit">
+            <div class="col-md">
+                    {{form.date_of_issue_pi}}
+                <label for="{{form.date_of_issue_pi.id_for_label}}" >{{form.date_of_issue_pi.label}}</label>
+            </div>
+            <div class="col-md">
+                    {{form.date_of_expiry_pi}}
+                <label for="{{form.date_of_expiry_pi.id_for_label}}" >{{form.date_of_expiry_pi.label}}</label>
+            </div>
+        </div>
+        <div class="px-edit" style="margin-top: 8px;">
+            <div class="form-outline mb-3 bg-white">
+                {{form.contact_person_pi}}
+                <label class="form-label" for="{{form.contact_person_pi.id_for_label}}">{{form.contact_person_pi.label}}</label>
+            </div>
+            <div class="form-error">{{form.contact_person_pi.errors}}</div>
+        </div>
+
+        <div class="px-edit" style="margin-top: 16px;">
+            <div class="form-outline mb-3 bg-white">
+                {{form.contact_person_phone_pi}}
+                <label class="form-label" for="{{form.contact_person_phone_pi.id_for_label}}">{{form.contact_person_phone_pi.label}}</label>
+            </div>
+            <div class="form-error">{{form.contact_person_phone_pi.errors}}</div>
+        </div>
+
+        <div class="px-edit" style="margin-top: 16px;">
+            <div class="form-outline mb-3 bg-white">
+                {{form.contact_person_email_pi}}
+                <label class="form-label" for="{{form.contact_person_email_pi.id_for_label}}">{{form.contact_person_email_pi.label}}</label>
+            </div>
+            <div class="form-error">{{form.contact_person_email_pi.errors}}</div>
+        </div>
+    
+
+        <div class="px-edit mx-auto pt-6">
+            <a href="{% url 'application' %}"><button type="button" class="btn btn-danger">{% trans 'Отменить' %}</button></a>
+            <button type="submit" class="btn btn-primary position-relative start" style="margin-left: 57.2%;">{% trans 'Сохранить изменения' %}</button>                   
+        </div>
+    </div>
+</div>
+</form>
+{% endblock %}

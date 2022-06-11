@@ -1,0 +1,83 @@
+#создай здесь свой индивидуальный проект!
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv('train.csv')
+
+df = df.dropna()
+print(df.head())
+print(df.info())
+#1 гипотеза - Если пользователь добавляет фотографию на свой профиль, значит вероятность что он купит курс
+#высока.
+print(df.groupby(by = 'has_photo')['result'].mean())
+df['has_photo'].value_counts().plot(kind = 'barh', figsize = (8, 6))
+# plt.show()
+
+
+def education_status_apply(x):
+    if x == 'Candidate of Sciences':
+        return 0
+    elif x == 'PhD':
+        return 1
+    elif x == "Alumnus (Bachelor's)":
+        return 2
+    elif x == "Student (Bachelor's)":
+        return 3
+    elif x == "Student (Specialist)":
+        return 4
+    elif x == "Alumnus (Specialist)":
+        return 5
+    elif x == "Alumnus (Master's)":
+        return 6
+    elif x == "Student (Master's)":
+        return 7
+    elif x == "Undergraduate applicant":
+        return 8
+
+def education_form_apply(x):
+    if x == 'Part-time':
+        return 0
+    elif x == 'Distance Learning':
+        return 1
+    elif x == 'Full-time':
+        return 2
+
+def occupation_type_apply(x):
+    if x == 'work':
+        return 0
+    if x == 'university':
+        return 1
+
+df['occupation_type'] = df['occupation_type'].apply(occupation_type_apply)
+df['education_form'] = df['education_form'].apply(education_form_apply)
+df['education_status'] = df['education_status'].apply(education_status_apply)
+#Измененные столбцы строка-число
+print(df['education_form'].value_counts())
+print(df['education_status'].value_counts())
+print(df['occupation_type'].value_counts())
+
+df.drop(['id', 'bdate', 'langs', 'life_main', 'people_main', 'city', 'last_seen',  'occupation_name', 'career_start', 'career_end'], axis = 1, inplace = True)
+print(df)
+#Создание математической модели с помощью алгоритма KNN
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import confusion_matrix, accuracy_score
+
+x = df.drop('result', axis = 1)
+y = df['result']
+
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.25)
+
+sc = StandardScaler()
+
+x_train = sc.fit_transform(x_train)
+x_test = sc.transform(x_test)
+
+knn_classifier = KNeighborsClassifier()
+knn_classifier.fit(x_train, y_train)
+
+y_pred = knn_classifier.predict(x_test)
+
+print("На сколько процентов правильно предсказывает модель:", accuracy_score(y_test, y_pred) * 100)
+

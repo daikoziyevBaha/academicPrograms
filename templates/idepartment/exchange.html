@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div>
+    <div class="container m-auto px-4">
+
+      <div class="py-3">
+        <img alt="aboutIITU.png" height="500" src="{% static 'images/aboutIITU.png' %}" width="1139">
+      </div>
+
+    </div>
+
+    <div class="container pt-6 m-auto px-4">
+
+      <div class="text-3x1 text-center">Для студентов исходящей и входящей мобильности</div>
+      
+      <div class="flex flex-wrap">
+
+        <div class="airplane col-md-12 col-24">
+
+          <a href="incoming-stud.html">
+            <img src="{% static 'images/Incoming_1176x644.jpg' %}" class="h-1" alt="incoming">
+          </a>
+
+          <h2 class="text-red">Incoming students</h2>
+
+          <p class="p-text-1">
+            Hong Kong is a great exchange destination. It’s one of the most popular places for students from anywhere to study, bringing together culture, lifestyle and industry exposure.
+          </p>
+
+          <p>
+            <a href="incoming-stud.html" class="p-text-under">Learn More</a>
+          </p>
+
+        </div>
+
+        <div class="airplane col-md-12 col-24">
+
+          <a href="outgoing-stud.html">
+            <img src="{% static 'images/Outgoing_1176x644.jpg' %}" class="h-1" alt="outgoing">
+          </a>
+
+          <h2 class="text-red">Outgoing students</h2>
+
+          <p class="p-text-1">
+            Explore your offshore learning options for international exposure and global outlook. Engage with universities across the globe, whether it's study abroad, summer school, research or conferences, to just name a few.
+          </p>
+
+          <p>
+            <a href="outgoing-stud.html" class="p-text-under">Learn More</a>
+          </p>
+
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

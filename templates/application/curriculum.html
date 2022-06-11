@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+
+{% block content %}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <div class="container px-4">
+        <div class="text-3x1 text-center">{% trans 'Текущее образование' %}</div>
+    </div>
+    <div class="container">
+            <form action = '#' method="post" enctype="multipart/form-data" class="form-group">
+                {% csrf_token %}
+            <div class="form-error">{{ form.non_field_errors }}</div>
+            <div class="px-edit pt-6" style="margin: 8px 0 0;">
+                {{form.country_ci}}
+            </div>
+            <div class="form-error">{{ form.country_ci.errors }}</div>
+            <div class="px-edit pt-6" style="margin: 8px 0 0;">
+                {{form.university_ci}}
+            </div>
+            <div class="form-error">{{ form.country_ci.errors }}</div>
+            
+            <div class="px-edit pt-6">
+                <div class="form-outline mb-3 bg-white">
+                    {{form.start_year_ci}}
+                    <label class="form-label" for="{{form.start_year_ci.id_for_label}}">{{form.start_year_ci.label}}</label>
+                </div>
+            </div>
+            <div class="form-error">{{ form.start_year_ci.errors }}</div>
+
+            <div class="px-edit pt-6">
+                <div class="form-outline mb-3 bg-white">
+                    {{form.graduation_year_ci}}
+                    <label class="form-label" for="{{form.graduation_year_ci.id_for_label}}">{{form.graduation_year_ci.label}}</label>
+                </div>
+            </div>
+            <div class="form-error">{{ form.graduation_year_ci.errors }}</div>
+            
+            <div class="px-edit pt-6" style="margin: 8px 0 0;">
+                {{form.degree_title_ci}}
+            </div>
+            <div class="form-error">{{ form.degree_title_ci.errors }}</div>
+            <div class="px-edit pt-6">
+                <div class="form-outline mb-3 bg-white">
+                    {{form.specialty_ci}}
+                    <label class="form-label" for="{{form.specialty_ci.id_for_label}}">{{form.specialty_ci.label}}</label>
+                </div>
+            </div>
+            <div class="form-error">{{ form.specialty_ci.errors }}</div>
+
+            <div class="px-edit mx-auto pt-6">
+                <a href="{% url 'application' %}"><button type="button" class="btn btn-danger">{% trans 'Отменить' %}</button></a>
+                <button type="submit" class="btn btn-primary position-relative start" style="margin-left: 57.2%;">{% trans 'Сохранить изменения' %}</button>                   
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
